@@ -56,12 +56,13 @@
   --color-danger-border: rgba(239, 68, 68, 0.4);
   --color-warning: #d97706;
 
-  /* Geometry */
-  --radius-sm: 0.5rem;
-  --radius-md: 0.85rem;
-  --radius-lg: 1.25rem;
-  --radius-xl: 1.75rem;
-  --radius-full: 9999px;
+  /* Geometry: Sharp Precision Aesthetic */
+  --radius-xs: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-full: 4px;
   
   /* Layout */
   --max-w-content: 1200px;
@@ -124,9 +125,9 @@ body {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid var(--glass-border);
+  border: 1.5px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
 }
@@ -138,20 +139,20 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
   pointer-events: none;
 }
 
 .dark .amber-glass::before {
-  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.6), transparent);
 }
 
 .amber-glass-subtle {
   background: var(--glass-bg-subtle);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border-amber);
-  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--glass-border-amber);
+  border-radius: var(--radius-md);
 }
 
 .spatial-hover {
@@ -427,8 +428,9 @@ body {
 .card-header-icon {
   width: 2.75rem;
   height: 2.75rem;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   background: rgba(153, 27, 27, 0.12);
+  border: 1.5px solid rgba(153, 27, 27, 0.25);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -438,6 +440,7 @@ body {
 
 .dark .card-header-icon {
   background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.35);
   color: var(--amber-400);
 }
 
@@ -492,7 +495,7 @@ textarea {
   color: var(--text-main);
   background: var(--input-bg);
   border: 1.5px solid var(--input-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   outline: none;
   transition: all 0.25s ease;
   backdrop-filter: blur(8px);
@@ -533,19 +536,21 @@ textarea:focus {
   gap: 0.5rem;
   font-family: inherit;
   font-size: 0.92rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.8rem 1.4rem;
-  border-radius: var(--radius-md);
-  border: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), #b91c1c);
   color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 14px var(--primary-glow);
 }
 
@@ -558,7 +563,7 @@ textarea:focus {
 .btn-amber-glass {
   background: rgba(255, 255, 255, 0.5);
   color: var(--text-main);
-  border: 1px solid var(--glass-border-amber);
+  border: 1.5px solid var(--glass-border-amber);
   backdrop-filter: blur(8px);
 }
 
@@ -737,7 +742,8 @@ textarea:focus {
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 1.2rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -747,7 +753,7 @@ textarea:focus {
 
 /* Lolos Style */
 .hasil-lolos {
-  border-color: rgba(34, 197, 94, 0.45);
+  border: 2px solid rgba(34, 197, 94, 0.55);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.65), rgba(240, 253, 244, 0.5));
 }
 
@@ -833,22 +839,24 @@ textarea:focus {
   font-family: 'Geist', monospace;
   font-size: 0.95rem;
   font-weight: 700;
-  padding: 0.25rem 0.85rem;
+  padding: 0.35rem 1rem;
   background: rgba(217, 119, 6, 0.15);
-  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(217, 119, 6, 0.35);
+  border-radius: var(--radius-sm);
   color: var(--amber-900);
   margin-bottom: 1.25rem;
 }
 
 .dark .nisn-badge-prominent {
   background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.35);
   color: var(--amber-300);
 }
 
 .ket-box-prominent {
   background: rgba(255, 255, 255, 0.5);
-  border: 1px dashed var(--glass-border-amber);
-  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--glass-border-amber);
+  border-radius: var(--radius-sm);
   padding: 0.85rem 1.25rem;
   font-size: 0.9rem;
   color: var(--text-main);
@@ -945,11 +953,11 @@ textarea:focus {
   align-items: center;
   gap: 0.5rem;
   padding: 0.45rem 0.95rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   font-size: 0.82rem;
   font-weight: 700;
   background: rgba(255, 255, 255, 0.4);
-  border: 1px solid var(--glass-border-amber);
+  border: 1.5px solid var(--glass-border-amber);
   color: var(--text-main);
 }
 
@@ -972,7 +980,7 @@ textarea:focus {
 /* Drag and Drop Area */
 .file-upload-bento {
   border: 2px dashed var(--glass-border-amber);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   padding: 2.25rem 1.5rem;
   text-align: center;
   cursor: pointer;
@@ -1051,22 +1059,23 @@ textarea:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-full);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-sm);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.03em;
 }
 
 .status-badge-pill.lolos {
   background: var(--color-success-bg);
   color: var(--color-success);
-  border: 1px solid var(--color-success-border);
+  border: 1.5px solid var(--color-success-border);
 }
 
 .status-badge-pill.tidak {
   background: var(--color-danger-bg);
   color: var(--color-danger);
-  border: 1px solid var(--color-danger-border);
+  border: 1.5px solid var(--color-danger-border);
 }
 
 .btn-del-row {
@@ -1093,7 +1102,7 @@ textarea:focus {
    ────────────────────────────────────────────────── */
 .alert-bento {
   padding: 0.85rem 1.15rem;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   font-size: 0.85rem;
   font-weight: 600;
   display: flex;
@@ -1104,13 +1113,13 @@ textarea:focus {
 
 .alert-danger {
   background: var(--color-danger-bg);
-  border: 1px solid var(--color-danger-border);
+  border: 1.5px solid var(--color-danger-border);
   color: var(--color-danger);
 }
 
 .alert-success {
   background: var(--color-success-bg);
-  border: 1px solid var(--color-success-border);
+  border: 1.5px solid var(--color-success-border);
   color: var(--color-success);
 }
 
@@ -1120,11 +1129,11 @@ textarea:focus {
   right: 2rem;
   z-index: 9999;
   padding: 0.85rem 1.4rem;
-  border-radius: var(--radius-md);
-  background: rgba(45, 26, 3, 0.9);
+  border-radius: var(--radius-sm);
+  background: rgba(45, 26, 3, 0.92);
   color: #fffbeb;
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  border: 1.5px solid rgba(251, 191, 36, 0.45);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   font-size: 0.88rem;
   font-weight: 600;
@@ -1168,8 +1177,8 @@ textarea:focus {
   padding: 2rem;
   text-align: center;
   background: var(--glass-bg-elevated);
-  border: 1px solid var(--glass-border-amber);
-  border-radius: var(--radius-xl);
+  border: 2px solid var(--glass-border-amber);
+  border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow-hover);
   animation: modal-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -1212,7 +1221,8 @@ textarea:focus {
   max-width: var(--max-w-content);
   margin: 0 auto;
   padding: 1.25rem 2rem;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--glass-border-amber);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1280,10 +1290,10 @@ textarea:focus {
   right: 2rem;
   width: 3.25rem;
   height: 3.25rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   background: var(--primary);
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 8px 24px var(--primary-glow);
   display: flex;
   align-items: center;
@@ -1295,7 +1305,7 @@ textarea:focus {
 }
 
 .floating-theme-toggle:hover {
-  transform: scale(1.1) rotate(15deg);
+  transform: scale(1.08);
 }
 
 /* ──────────────────────────────────────────────────
