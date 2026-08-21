@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Pengumuman Seleksi — SMAN 1 Soppeng</title>
+  
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Amber Glass Stylesheet -->
+  <link rel="stylesheet" href="pengumuman.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       OFFICIAL ORGANIZATIONAL LOGOS STRIP
+  ═══════════════════════════════════════════ -->
+  <header class="logos-strip">
+    <div class="logo-item" title="SMAN 1 Soppeng">
+      <img src="assets/logo/ChatGPT Image Aug 21, 2026, 08_51_16 PM.png" alt="SMAN 1 Soppeng" />
+    </div>
+    <div class="logo-item" title="MPK SMAN 1 Soppeng">
+      <img src="assets/logo/ChatGPT Image Aug 21, 2026, 09_14_11 PM.png" alt="MPK SMAN 1 Soppeng" />
+    </div>
+    <div class="logo-item" title="OSIS SMAN 1 Soppeng">
+      <img src="assets/logo/ChatGPT Image Aug 21, 2026, 08_58_48 PM.png" alt="OSIS SMAN 1 Soppeng" />
+    </div>
+    <div class="logo-item" title="Panitia PEMILOS">
+      <img src="assets/logo/ChatGPT Image Aug 21, 2026, 10_34_45 PM.webp" alt="Panitia Pemilos" />
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 1 — SISWA (FORM CEK STATUS)
+  ═══════════════════════════════════════════ -->
+  <main id="page-siswa" class="page active main-container">
+    
+    <div class="single-card-wrap">
+
+      <!-- Bento Card: Form Cek Status -->
+      <div class="amber-glass form-bento-card spatial-hover">
+        <div class="card-header-flex">
+          <div class="card-header-icon">
+            <span class="material-icons-round">search</span>
+          </div>
+          <div class="card-header-title">
+            <h3>Cek Kelulusan</h3>
+            <p>Masukkan data pendaftaran Anda</p>
+          </div>
+        </div>
+
+        <form id="formCekStatus" novalidate>
+          <div class="form-group">
+            <label for="inputNama">
+              <span class="material-icons-round" style="font-size:1rem;color:var(--primary);">person</span>
+              Nama Lengkap
+            </label>
+            <div class="input-wrap">
+              <span class="material-icons-round input-icon-left">badge</span>
+              <input type="text" id="inputNama" placeholder="Contoh: Nur Asyura Malik" autocomplete="off" />
+            </div>
+            <span class="field-hint">Tulis nama lengkap sesuai data formulir</span>
+          </div>
+
+          <div class="form-group">
+            <label for="inputNISN">
+              <span class="material-icons-round" style="font-size:1rem;color:var(--primary);">pin</span>
+              NISN (Nomor Induk Siswa Nasional)
+            </label>
+            <div class="input-wrap">
+              <span class="material-icons-round input-icon-left">numbers</span>
+              <input type="text" id="inputNISN" placeholder="Contoh: 0123456789" maxlength="10" autocomplete="off" />
+            </div>
+            <span class="field-hint">Hanya angka, maksimal 10 digit</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" style="margin-top: 1.25rem;">
+            <span class="material-icons-round">how_to_reg</span>
+            <span>Periksa Hasil Seleksi</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 2 — HASIL PENGUMUMAN (SPATIAL BENTO)
+  ═══════════════════════════════════════════ -->
+  <div id="page-hasil" class="page">
+    <div class="hasil-page-layout">
+      
+      <div class="hasil-card-wrapper" id="hasilContainer">
+        <!-- Dynamically rendered via JS -->
+      </div>
+
+      <button class="btn btn-amber-glass" id="btnKembali" style="padding: 0.85rem 2rem;">
+        <span class="material-icons-round">arrow_back</span>
+        <span>Cek Ulang Peserta Lain</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE 3 — ADMIN DASHBOARD & LOGIN
+  ═══════════════════════════════════════════ -->
+  <div id="page-admin" class="page">
+    
+    <!-- Login Panel -->
+    <div id="panel-login" class="admin-center-wrap">
+      <div class="amber-glass login-card-bento spatial-hover">
+        <div class="login-shield-icon">
+          <span class="material-icons-round">security</span>
+        </div>
+        <h2 style="font-size:1.5rem;font-weight:800;color:var(--text-main);margin-bottom:0.25rem;">Panel Panitia MPK</h2>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1.5rem;">
+          Masukkan kata sandi panitia untuk mengelola data peserta.
+        </p>
+
+        <form id="formLogin" novalidate>
+          <div class="form-group" style="text-align:left;">
+            <label for="inputPassword">Kata Sandi Panitia</label>
+            <div class="pass-wrapper">
+              <span class="material-icons-round input-icon-left">key</span>
+              <input type="password" id="inputPassword" placeholder="Masukkan kata sandi..." />
+              <button type="button" class="btn-eye-pass" id="btnTogglePass" title="Lihat/Sembunyikan">
+                <span class="material-icons-round">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="loginError" class="alert-bento alert-danger" style="display:none;">
+            <span class="material-icons-round">error</span>
+            <span>Kata sandi salah. Silakan coba lagi.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" style="margin-top:1rem;">
+            <span class="material-icons-round">login</span>
+            <span>Masuk ke Dashboard</span>
+          </button>
+        </form>
+
+        <button class="btn btn-outline btn-full btn-sm" id="btnBackFromLogin" style="margin-top:1rem;">
+          <span class="material-icons-round">arrow_back</span>
+          <span>Kembali ke Halaman Siswa</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="panel-dashboard" class="main-container" style="display:none;">
+      
+      <!-- Top Bar Stats -->
+      <div class="amber-glass admin-header-bento">
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+          <div class="brand-icon-box" style="width:2.4rem;height:2.4rem;font-size:1.1rem;">
+            <span class="material-icons-round">admin_panel_settings</span>
+          </div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:800;color:var(--text-main);">Dashboard Panitia Pemilos</h3>
+            <span style="font-size:0.75rem;color:var(--text-muted);">Kelola data dan status kelulusan peserta</span>
+          </div>
+        </div>
+
+        <div class="stats-group">
+          <div id="statTotal" class="stat-chip">
+            <span class="material-icons-round" style="color:var(--primary);">groups</span>
+            <span><strong>0</strong> Peserta</span>
+          </div>
+          <div id="statLolos" class="stat-chip lolos">
+            <span class="material-icons-round">check_circle</span>
+            <span><strong>0</strong> Lolos</span>
+          </div>
+          <div id="statTidak" class="stat-chip tidak">
+            <span class="material-icons-round">cancel</span>
+            <span><strong>0</strong> Tidak Lolos</span>
+          </div>
+          <button class="btn btn-outline btn-sm" id="btnLogout">
+            <span class="material-icons-round">logout</span>
+            <span>Keluar</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Bento Layout -->
+      <div class="bento-grid">
+        
+        <!-- Bento Card: Input Peserta Manual (Col 6) -->
+        <div class="col-6 amber-glass form-bento-card spatial-hover">
+          <div class="card-header-flex">
+            <div class="card-header-icon">
+              <span class="material-icons-round">person_add</span>
+            </div>
+            <div class="card-header-title">
+              <h3>Tambah Peserta Manual</h3>
+              <p>Tambahkan peserta satu per satu ke sistem</p>
+            </div>
+          </div>
+
+          <form id="formTambah" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.85rem;">
+              <div class="form-group">
+                <label for="addNama">Nama Lengkap</label>
+                <input type="text" id="addNama" placeholder="Nama lengkap" class="input-plain" />
+              </div>
+              <div class="form-group">
+                <label for="addNISN">NISN (10 Digit)</label>
+                <input type="text" id="addNISN" placeholder="10 digit angka" maxlength="10" class="input-plain" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="addStatus">Status Kelulusan</label>
+              <select id="addStatus" class="input-plain">
+                <option value="lolos">✅ SELAMAT ANDA LOLOS PANITIA PEMILOS TAHUN 2026</option>
+                <option value="tidak">❌ MOHON MAAF ANDA TIDAK LOLOS, TETAP SEMANGAT</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="addKeterangan">Keterangan / Catatan <em>(Opsional)</em></label>
+              <input type="text" id="addKeterangan" placeholder="Contoh: Wawancara Tgl 25 Pkl 09.00" class="input-plain" />
+            </div>
+
+            <div id="tambahError" class="alert-bento alert-danger" style="display:none;"></div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top:0.5rem;">
+              <span class="material-icons-round">save</span>
+              <span>Simpan Data Peserta</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Bento Card: Import CSV (Col 6) -->
+        <div class="col-6 amber-glass form-bento-card spatial-hover">
+          <div class="card-header-flex">
+            <div class="card-header-icon">
+              <span class="material-icons-round">upload_file</span>
+            </div>
+            <div class="card-header-title">
+              <h3>Import Data Massal (.CSV)</h3>
+              <p>Unggah file spreadsheet peserta sekaligus</p>
+            </div>
+          </div>
+
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.5;">
+            Format kolom: <code>Nama Lengkap,NISN,Status,Keterangan</code><br/>
+            Nilai status: <code>lolos</code> atau <code>tidak</code> (baris pertama dianggap judul/header).
+          </p>
+
+          <div class="file-upload-bento" id="fileUploadArea">
+            <span class="material-icons-round" style="font-size:3rem;color:var(--primary);display:block;margin-bottom:0.5rem;">cloud_upload</span>
+            <p style="font-weight:700;color:var(--text-main);">Klik atau Seret File CSV ke Sini</p>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.25rem;">Hanya menerima file berekstensi .csv (UTF-8)</p>
+            <input type="file" id="csvInput" accept=".csv" />
+          </div>
+
+          <div id="importFeedback" class="alert-bento" style="display:none;"></div>
+        </div>
+
+        <!-- Bento Card: Tabel Data Peserta (Col 12) -->
+        <div class="col-12 amber-glass form-bento-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+            <div style="display:flex;align-items:center;gap:0.65rem;">
+              <div class="card-header-icon" style="width:2.4rem;height:2.4rem;font-size:1.1rem;">
+                <span class="material-icons-round">format_list_bulleted</span>
+              </div>
+              <div>
+                <h3 style="font-size:1.15rem;font-weight:800;color:var(--text-main);">Daftar Seluruh Peserta</h3>
+                <p style="font-size:0.8rem;color:var(--text-muted);">Pencarian dan manajemen status peserta</p>
+              </div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;">
+              <div class="input-wrap" style="width:220px;">
+                <span class="material-icons-round input-icon-left" style="font-size:0.9rem;">search</span>
+                <input type="text" id="searchPeserta" placeholder="Cari nama / NISN..." style="padding:0.55rem 0.75rem 0.55rem 2.2rem;font-size:0.85rem;" />
+              </div>
+              <select id="filterStatus" class="input-plain" style="padding:0.55rem 0.85rem;font-size:0.85rem;width:auto;">
+                <option value="semua">Semua Status</option>
+                <option value="lolos">✅ Lolos</option>
+                <option value="tidak">❌ Tidak Lolos</option>
+              </select>
+              <button class="btn btn-amber-glass btn-sm" id="btnExportCSV" title="Export CSV">
+                <span class="material-icons-round">download</span>
+                <span>Export</span>
+              </button>
+              <button class="btn btn-danger btn-sm" id="btnHapusSemua" title="Hapus Semua">
+                <span class="material-icons-round">delete_sweep</span>
+                <span>Hapus Semua</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="glass-table" id="tabelPeserta">
+              <thead>
+                <tr>
+                  <th style="width:45px;">#</th>
+                  <th>Nama Lengkap</th>
+                  <th>NISN</th>
+                  <th>Status Kelulusan</th>
+                  <th>Keterangan</th>
+                  <th style="text-align:center;width:70px;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyPeserta">
+                <!-- Diisi oleh JS -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       GLOBAL FOOTER (OFFICIAL SOCIAL STRIP)
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner amber-glass">
+      
+      <div class="footer-socials">
+        <a class="social-link" href="https://instagram.com/mpk_smansasoppeng" target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram social-icon"></i>
+          <span>mpk_smansasoppeng</span>
+        </a>
+        <span class="social-divider">|</span>
+        <a class="social-link" href="https://www.tiktok.com/@mpk_smansaa?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">
+          <i class="fa-brands fa-tiktok social-icon"></i>
+          <span>mpk_smansa</span>
+        </a>
+        <span class="social-divider">|</span>
+        <a class="social-link" href="mailto:mpksmansasoppeng@gmail.com">
+          <i class="fa-solid fa-envelope social-icon"></i>
+          <span>mpksmansasoppeng@gmail.com</span>
+        </a>
+      </div>
+
+      <div class="footer-copy">
+        © 2026 MPK SMAN 1 SOPPENG • Hak Cipta Dilindungi
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Dark Mode Button -->
+  <button class="floating-theme-toggle" id="btnThemeToggleFloat" title="Ganti Mode Gelap / Terang">
+    <span class="material-icons-round" id="themeIconFloat">dark_mode</span>
+  </button>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics-compat.js"></script>
+
+  <!-- Script Logic -->
+  <script src="pengumuman.js"></script>
+</body>
+</html>

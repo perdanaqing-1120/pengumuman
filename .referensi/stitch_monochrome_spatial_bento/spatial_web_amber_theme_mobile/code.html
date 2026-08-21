@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amber Glass Mobile Interface</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#8B1E1E", // Deep red from logo accents
+                        "background-light": "#FFF3E0",
+                        "background-dark": "#1A0F05",
+                        accent: {
+                            gold: "#F9A825",
+                            darkRed: "#5C1212"
+                        }
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1.25rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuArqPTjz8oFuXKywKdG0Kg2l4TAUbgaeK29vx6T2nxznPKfHrIYM3A4QPuHB6brcMrCRuOgQnMU80kMs7ThgMrBvbVzZEsWNDMl3QVWcURX3plpwvPHBMYFubHqJ_ob4fi3P7OsfwNnXxxtfBdn2Mb_RGAZJZe_dpP8Hi1dDF08mN0jAs0no9oeBBh8DyhQRV8DRVIonlbPC0-6X0lMqVFMiBPlj3zyMek9kOYGuudxDFutMZzUDy4);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh
+    }
+.glass-amber {
+    background: rgba(255, 236, 179, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(139, 30, 30, 0.1)
+    }
+.dark .glass-amber {
+    background: rgba(26, 15, 5, 0.4);
+    border: 1px solid rgba(255, 160, 0, 0.1)
+    }
+.bento-card {
+    transition: transform 0.2s ease
+    }
+.bento-card:active {
+    transform: scale(0.98)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased text-accent-darkRed dark:text-amber-50">
+<header class="pt-8 pb-4 px-6 flex justify-center items-center gap-3">
+<div class="w-12 h-12 flex items-center justify-center">
+<img alt="SMAN 1 Logo" class="object-contain drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu5fXnObpDwqni9vMEbdL9bVPTeAmAGMNfNZGY0Dz_atB1KRe2ItOVGVveChPgmSZJ0GyPvECexUwA1PmSF5RDuBtF0Yx59UroxKzK2t8t75SBB8vRIT-rdjHbq7LWHt41e6vjbl6fNixQ9qH1odmH2Vr8zRq-2z2GIOJH1XXLPyCWo331uzgKjUbUdoJhDWLvtsPgJQbU5VcZHmlChGgUx9ebYw-ocF78vE9wOvVKvR5mLwZDEyo"/>
+</div>
+<div class="w-12 h-12 flex items-center justify-center">
+<img alt="MPK Logo" class="object-contain drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCgR1OHrEDKdoLbo2n4j9yWrXnX5LkM_ZcqHd42hpc9N3M8tG32uwZf-MOdyG_g_Pzu7X5uW7KLw0tvoiG4-v8mgbg-D4o9Bj7FN6EmcGsYtk5QnoOS8uXIb31bJXepdB5YUPBWIIIEEV-rjwKqgKdihwD_85VF1EcTWguczH75rSq95KsQv9-lbgxUBoRjlD5dQ6GOslN7KZX_ZY7aHckyRcvEWKOVMUtqKMMI6X4mr1aIIviuD8"/>
+</div>
+<div class="w-12 h-12 flex items-center justify-center">
+<img alt="OSIS Logo" class="object-contain drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc5eYNKYWvfXSb33_SrbwZaPqqInp7d1gcNo545DgFz0EXjINcp5KHjpsSRnGh79aiKNy_7wXYdiJvqTAwKHdJvl8W09T1UtqreY31FaEGz0mblP5y13AJ9GJoV1evkLVk5Zd24pRpeiDnY890r7-w1kGFWNPesdZs32FBnp25Wr3EIFC_HqWyqK6xt_uBDXfgDDn85VqXbKpYGEQEqbl-4yuvj1cpyzxravmnFC69K-yISeuVbuc"/>
+</div>
+<div class="w-12 h-12 flex items-center justify-center">
+<img alt="Panitia Logo" class="object-contain drop-shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHPnqWuEIfnNA4kgbHwfFUcmbqTAszeNQsPN2fdLego2rLDD-DMnY_g-R3aNih20a7xFSz-x7djw6xKRvyehM8M7DgVHi5Z1zeMadkEZVGEet4cwESz8tO0zgzjxEFTm5t4kmUM_w9RlhZXDowp10yOHVHGOONAJYxacvh7U-se5e8AEmK6Ws2nD94RBAC8VWtmCH-cABqnnCnzdd3KxlDdimg2jb2tdkcl7Q0ngi7pja3D9r4PHY"/>
+</div>
+</header>
+<main class="px-6 pb-24 max-w-lg mx-auto">
+<section class="mt-4 mb-8">
+<h1 class="text-3xl font-extrabold text-primary dark:text-amber-400 leading-tight">
+                Selamat Datang di Portal Pemilihan
+            </h1>
+<p class="mt-2 text-primary/80 dark:text-amber-100/70 font-medium">
+                Wujudkan aspirasi melalui hak suara Anda hari ini.
+            </p>
+</section>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 glass-amber p-6 rounded-3xl bento-card border-l-4 border-l-primary">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-primary/60 dark:text-amber-500 mb-1">Status Pemilihan</p>
+<h2 class="text-2xl font-bold text-primary dark:text-white">Sedang Berlangsung</h2>
+</div>
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+</div>
+<button class="mt-6 w-full py-3 bg-primary text-white rounded-2xl font-semibold shadow-lg shadow-primary/20 hover:bg-accent-darkRed transition-colors">
+                    Mulai Memilih
+                </button>
+</div>
+<div class="glass-amber p-5 rounded-3xl bento-card flex flex-col justify-between aspect-square">
+<div class="bg-primary/10 dark:bg-primary/20 w-10 h-10 rounded-full flex items-center justify-center">
+<span class="material-icons-round text-primary">groups</span>
+</div>
+<div>
+<h3 class="font-bold text-lg dark:text-white leading-tight">Kandidat Ketua</h3>
+<p class="text-xs text-primary/70 dark:text-amber-200/60 mt-1">Lihat Profil Pasangan Calon</p>
+</div>
+</div>
+<div class="glass-amber p-5 rounded-3xl bento-card flex flex-col justify-between aspect-square">
+<div class="bg-primary/10 dark:bg-primary/20 w-10 h-10 rounded-full flex items-center justify-center">
+<span class="material-icons-round text-primary">analytics</span>
+</div>
+<div>
+<h3 class="font-bold text-lg dark:text-white leading-tight">Quick Count</h3>
+<p class="text-xs text-primary/70 dark:text-amber-200/60 mt-1">Pantau Hasil Secara Real-time</p>
+</div>
+</div>
+<div class="col-span-2 glass-amber p-6 rounded-3xl bento-card flex items-center gap-4">
+<div class="w-14 h-14 bg-accent-gold/20 rounded-2xl flex items-center justify-center shrink-0">
+<span class="material-icons-round text-accent-gold text-3xl">verified_user</span>
+</div>
+<div>
+<h3 class="font-bold text-primary dark:text-white">Jujur &amp; Adil</h3>
+<p class="text-sm text-primary/70 dark:text-amber-200/60">Sistem voting yang aman, rahasia, dan transparan.</p>
+</div>
+</div>
+<div class="col-span-2 glass-amber p-6 rounded-3xl bento-card">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-primary dark:text-white">Informasi Terkini</h3>
+<span class="material-icons-round text-primary/40">arrow_forward_ios</span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-3 items-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<p class="text-sm dark:text-amber-100">Debat kandidat telah selesai dilaksanakan.</p>
+</div>
+<hr class="border-primary/10 dark:border-white/10"/>
+<div class="flex gap-3 items-center">
+<div class="w-2 h-2 rounded-full bg-accent-gold"></div>
+<p class="text-sm dark:text-amber-100">Pemilihan ditutup pukul 14:00 WITA.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 w-full bg-primary/95 text-white py-4 px-6 backdrop-blur-md">
+<div class="max-w-lg mx-auto flex flex-col md:flex-row justify-center items-center gap-4 text-[10px] md:text-xs font-medium tracking-tight opacity-90">
+<a class="flex items-center gap-1.5 hover:text-amber-200 transition-colors" href="#">
+<img alt="IG" class="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5KJT4NwJKq-6OAJHjdBe502iStRzK-rfU1ql8VmhZtwK92D97P-QZYyWF9XsXbA-nQOLq6D29YMkSpAmCkuYF2-pcZ59Nw5cxofVZ1y-pm3e9se7TaEnlIt7acwLl2l8V1Y26BfkNG-zEgzrwD1C8mlU6vUIw71-2w2-FNOPoFmAaYTuRgUu9Nv-R_3HxUNNOWC-k95fV2FfZaaxwb7YbeYzJ3tGtiT-32iN_ezMPHY3i7WkXLnU"/>
+                mpk_smansasoppeng
+            </a>
+<span class="hidden md:block opacity-30">|</span>
+<a class="flex items-center gap-1.5 hover:text-amber-200 transition-colors" href="#">
+<img alt="TikTok" class="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxwt2PANstzNTm3oBH6reQxqw5MgJKT0l-cUyY1weVgGYjp9UWty0TWEGPbCQ4mtuudrfaEYPSB5yXWSHT9_msVyW_rMFSBXzIv3sY_9hA2RL2W8nwp7yhbOqJTeChRlNwF7bZxW3ydwZWnQHEmiJd37TngJtuTPIH-yGd9PkFh5LVpnCTKZxSMLSDzpN2NU8T7DjKJnvCGb-_nZgmtQpiaOnH72zB-WrCCFQo28-j3U0eKQNzfUw"/>
+                mpk_smansa
+            </a>
+<span class="hidden md:block opacity-30">|</span>
+<a class="flex items-center gap-1.5 hover:text-amber-200 transition-colors" href="mailto:mpksmansasoppeng@gmail.com">
+<span class="material-icons-round text-base">mail</span>
+                mpksmansasoppeng@gmail.com
+            </a>
+</div>
+</footer>
+<button class="fixed bottom-24 right-6 w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-xl z-50" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round">dark_mode</span>
+</button>
+
+</body></html>

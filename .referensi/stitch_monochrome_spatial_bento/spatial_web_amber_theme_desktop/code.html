@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amber Glass Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#991b1b", // Deep red for contrast
+                        amber: {
+                            50: "#fffbeb",
+                            100: "#fef3c7",
+                            200: "#fde68a",
+                            300: "#fcd34d",
+                            400: "#fbbf24",
+                            500: "#f59e0b",
+                            600: "#d97706",
+                            700: "#b45309",
+                            800: "#92400e",
+                            900: "#78350f",
+                            950: "#451a03",
+                        },
+                        "background-light": "#fff7ed",
+                        "background-dark": "#1a1005",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>body {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB3-u67KNQBgJih7Rnod3vSHVqOELwDPREB_TR8N7BJB7kGuPrMSg8C3YQ2SlaEazH86fHzy9WgbEvYt4WXCijktRUsgCSU0fkKaAAiYiuNeI4UACQVQxD34EhzuH7qILm6EfrvWmVvqJwDLVX8WjUPbl8UKjpb842hRIryy1HdNlLBGpZyyBhhxYmDiCufYdo3PixsKMXXd2ncwPdIsMJaIfVc40LjypeuWTKZPCcAJi8GDJYFY7s);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: "Plus Jakarta Sans", sans-serif
+    }
+.amber-glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.1)
+    }
+.dark .amber-glass {
+    background: rgba(45, 26, 3, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(251, 191, 36, 0.2)
+    }
+.spatial-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+    }
+.spatial-hover:hover {
+    transform: translatey(-4px) scale(1.01);
+    box-shadow: 0 20px 40px -10px rgba(139, 69, 19, 0.2)
+    }</style>
+</head>
+<body class="min-h-screen text-amber-950 dark:text-amber-50 selection:bg-primary selection:text-white">
+<nav class="sticky top-0 z-50 px-6 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between amber-glass rounded-2xl px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+<span class="material-icons-round text-white">auto_awesome</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-primary uppercase">Mansa Portal</span>
+</div>
+<div class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="hover:text-primary transition-colors" href="#">Information</a>
+<a class="hover:text-primary transition-colors" href="#">Services</a>
+<a class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-red-800 transition-colors shadow-md" href="#">Login</a>
+</div>
+<button class="md:hidden p-2 text-amber-900">
+<span class="material-icons-round">menu</span>
+</button>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-4 grid-rows-auto gap-4">
+<div class="md:col-span-2 md:row-span-2 amber-glass rounded-3xl p-8 flex flex-col justify-between spatial-hover">
+<div>
+<h1 class="text-4xl md:text-5xl font-extrabold text-amber-950 dark:text-white leading-tight mb-4">
+                    Digital Excellence in <span class="text-primary">Amber</span>
+</h1>
+<p class="text-lg text-amber-900/80 dark:text-amber-100/80 max-w-md">
+                    Experience the new unified portal for student activities and administration, now upgraded with spatial glass aesthetics.
+                </p>
+</div>
+<div class="mt-8 flex gap-3">
+<button class="px-6 py-3 bg-amber-950 text-white rounded-xl font-semibold hover:bg-black transition-colors">Get Started</button>
+<button class="px-6 py-3 amber-glass border-amber-900/10 text-amber-950 font-semibold rounded-xl hover:bg-white/40 transition-colors">Learn More</button>
+</div>
+</div>
+<div class="md:col-span-1 amber-glass rounded-3xl p-6 spatial-hover">
+<div class="flex items-center justify-between mb-4">
+<span class="material-icons-round text-primary p-3 bg-white/50 rounded-2xl">groups</span>
+<span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">Total Users</span>
+</div>
+<div class="text-3xl font-bold text-amber-950 dark:text-white">1,284</div>
+<p class="text-sm text-amber-800/60 dark:text-amber-300/60 mt-1">+12% from last month</p>
+</div>
+<div class="md:col-span-1 amber-glass rounded-3xl p-6 spatial-hover">
+<div class="flex items-center justify-between mb-4">
+<span class="material-icons-round text-primary p-3 bg-white/50 rounded-2xl">campaign</span>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white/50 bg-amber-400"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white/50 bg-amber-200"></div>
+</div>
+</div>
+<div class="text-amber-950 dark:text-white font-semibold">Latest Updates</div>
+<p class="text-sm text-amber-900/70 dark:text-amber-100/70 mt-2 italic">"Registration for the 2024 Science Fair is now open."</p>
+</div>
+<div class="md:col-span-2 amber-glass rounded-3xl p-6 spatial-hover overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-icons-round text-8xl">event_note</span>
+</div>
+<h3 class="text-xl font-bold text-amber-950 dark:text-white mb-4">Upcoming Schedule</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 bg-white/30 dark:bg-white/10 rounded-2xl">
+<div class="bg-primary text-white w-12 h-12 rounded-xl flex flex-col items-center justify-center">
+<span class="text-xs">OCT</span>
+<span class="font-bold">24</span>
+</div>
+<div>
+<div class="font-bold text-amber-950 dark:text-white">Annual Sports Meet</div>
+<div class="text-xs text-amber-800 dark:text-amber-300">08:00 AM • Main Field</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-white/30 dark:bg-white/10 rounded-2xl">
+<div class="bg-amber-600 text-white w-12 h-12 rounded-xl flex flex-col items-center justify-center">
+<span class="text-xs">OCT</span>
+<span class="font-bold">28</span>
+</div>
+<div>
+<div class="font-bold text-amber-950 dark:text-white">Student Council Meeting</div>
+<div class="text-xs text-amber-800 dark:text-amber-300">02:30 PM • Conference Room</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-1 amber-glass rounded-3xl p-6 spatial-hover group">
+<div class="h-full flex flex-col">
+<div class="grow rounded-2xl bg-gradient-to-br from-amber-400 to-primary/60 overflow-hidden relative mb-4">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-icons-round text-white text-4xl group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+</div>
+<div class="text-sm font-bold text-amber-950 dark:text-white">Campus Highlights</div>
+<p class="text-xs text-amber-900/60 dark:text-amber-100/60">Watch recent events video</p>
+</div>
+</div>
+<div class="md:col-span-1 amber-glass rounded-3xl p-6 spatial-hover bg-gradient-to-br from-white/40 to-amber-200/40">
+<div class="flex flex-col items-center justify-center h-full text-center">
+<span class="material-icons-round text-primary text-5xl mb-2">wb_sunny</span>
+<div class="text-2xl font-bold text-amber-950">32°C</div>
+<div class="text-sm font-medium text-amber-800">Sunny Day</div>
+<div class="text-[10px] uppercase tracking-widest text-amber-700/50 mt-2">Soppeng Regency</div>
+</div>
+</div>
+</main>
+<footer class="mt-12 mb-8 px-6">
+<div class="max-w-7xl mx-auto amber-glass rounded-3xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex gap-6">
+<img alt="Instagram" class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZQcU-4L6a_erwEW7Il3HXgU234LTPDITcq7wuMT8BUCprB67QZPMIgKgPDNvaE9N-OnbA74Uxar_zLGaV6Thr4jDdMc2PdhM7nms91q6ECC7PJP4JnEJTj9nU39WqIGes2WLt9KPrxGz3SjM5SwxENUUe0pwcQE62uAjGeYv3MA14PhIXA-qas-Xlkerk7Pbrkluu9-T0-vhdOtckEJWqyPgXPfhPfY5Iif4P5NV7DFRWloNjTN0"/>
+<img alt="TikTok" class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfaXJHUxwMK-YEDjSm3uusBb98v2CMKWm2Xxa-umgEsKJ5uu27HhWCpKJcOYo9F3qF3aB3IqaGHsCsoOn9tyCw4ONeI5qyso7kSAS86a9DshPXDJAO4fUNey50l5dPJgKgA7npE99AVrhlnKc-NebGSMSgn9Vg_Emxpk8SwFjxQlXHhLPTxehvEBJfKLPmoBq8b0dcrjF89TWuC4legIDY7fzG2cO7pS-UU_SCXPKExMZ_DKv3T_c"/>
+<img alt="Email" class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHzLL20YJT1MxzRwltZ7lpym-6I0DFJoMxPako1doaVLnvW1nZt1iEINrvr1RJz1ESXXB2KlrMAz7jLcG9VeX9q5cJgk2FxykQHcpCxVkO1IRwwTT1g4BTL0Fe_hu6rT4mb6X4uwkByO_AY03WHDOzFrtWbawBG9d8_UI6gXGsRVK1BPGKAQYBDKqvq92VVkPpSYC0TbdiSsVfW4lQOld7YqcM_HPkdlp0rISGCFKg3K-jpcHtp-A"/>
+</div>
+<div class="flex items-center gap-2 text-xs md:text-sm font-medium text-amber-950 dark:text-amber-100">
+<span class="opacity-60">© 2024 MPK SMAN 1 SOPPENG.</span>
+<span class="hidden md:inline text-primary">•</span>
+<span class="hover:text-primary transition-colors cursor-pointer">mpksmansasoppeng@gmail.com</span>
+</div>
+<div class="flex gap-2">
+<div class="w-8 h-8 rounded-lg bg-white/30 flex items-center justify-center cursor-pointer hover:bg-white/50 transition-colors">
+<span class="material-icons-round text-sm text-primary">translate</span>
+</div>
+<div class="w-8 h-8 rounded-lg bg-amber-950 flex items-center justify-center cursor-pointer hover:bg-black transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-round text-sm text-white">dark_mode</span>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
