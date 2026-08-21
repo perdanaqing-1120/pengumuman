@@ -255,7 +255,15 @@ function handleUrlRoute() {
   const hash = (window.location.hash || '').toLowerCase();
   const path = (window.location.pathname || '').toLowerCase();
 
-  if (hash === '#admin' || hash === '#/admin' || path.endsWith('/admin') || path.endsWith('/admin.html')) {
+  if (
+    hash === '#admin' || 
+    hash === '#/admin' || 
+    path === '/admin' || 
+    path === '/admin/' || 
+    path.endsWith('/admin') || 
+    path.endsWith('/admin/') || 
+    path.endsWith('/admin.html')
+  ) {
     showPage('page-admin');
     isLoggedIn ? showDashboard() : showLoginPanel();
   } else if (hash === '#hasil') {
@@ -271,17 +279,22 @@ function handleUrlRoute() {
 }
 
 function navigateToHome() {
-  if (window.location.hash) {
-    try {
+  try {
+    const path = window.location.pathname;
+    if (path.includes('/admin')) {
+      const cleanPath = path.replace(/\/admin(\.html)?\/?$/, '') || '/';
+      history.pushState(null, '', cleanPath + window.location.search);
+    } else if (window.location.hash) {
       history.replaceState(null, '', window.location.pathname + window.location.search);
-    } catch (e) {
-      window.location.hash = '';
     }
+  } catch (e) {
+    window.location.hash = '';
   }
   showPage('page-siswa');
 }
 
 window.addEventListener('hashchange', handleUrlRoute);
+window.addEventListener('popstate', handleUrlRoute);
 window.addEventListener('DOMContentLoaded', handleUrlRoute);
 
 document.getElementById('btnBackFromLogin')?.addEventListener('click', () => {
