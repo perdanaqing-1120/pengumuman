@@ -433,7 +433,7 @@ function buildLolosCard(p) {
           : ''
       }
       <p class="pesan-akhir">
-        Selamat! Anda telah berhasil lolos seleksi.<br/>
+        Selamat kepada yang dinyatakan diterima sebagai Panitia PEMILOS 2026<br/>
         Semoga sukses di langkah berikutnya.
       </p>
       <div class="wa-group-container">
