@@ -872,9 +872,11 @@ textarea:focus {
 }
 
 .pesan-akhir {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
+  margin: 0.85rem 0 0.5rem;
+  font-weight: 500;
 }
 
 /* ── WhatsApp Group CTA (Khusus Peserta Lolos) ── */

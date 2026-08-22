@@ -432,6 +432,10 @@ function buildLolosCard(p) {
             </div>`
           : ''
       }
+      <p class="pesan-akhir">
+        Selamat! Anda telah berhasil lolos seleksi.<br/>
+        Semoga sukses di langkah berikutnya.
+      </p>
       <div class="wa-group-container">
         <a href="${waGroupUrl}" target="_blank" rel="noopener noreferrer" class="btn-wa-group">
           <i class="fa-brands fa-whatsapp"></i>
@@ -463,6 +467,10 @@ function buildTidakCard(p) {
             </div>`
           : ''
       }
+      <p class="pesan-akhir">
+        Jangan menyerah! Setiap kegagalan adalah pelajaran berharga.<br/>
+        Tetap semangat dan terus berusaha.
+      </p>
     </div>`;
 }
 
