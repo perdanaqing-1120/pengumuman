@@ -434,7 +434,7 @@ function buildLolosCard(p) {
       }
       <p class="pesan-akhir">
         Selamat kepada yang dinyatakan diterima sebagai Panitia PEMILOS 2026<br/>
-        Semoga sukses di langkah berikutnya.
+        Semoga dapat menjalankan tugas dan tanggung jawab dengan baik serta memberikan kontribusi terbaik. 
       </p>
       <div class="wa-group-container">
         <a href="${waGroupUrl}" target="_blank" rel="noopener noreferrer" class="btn-wa-group">
