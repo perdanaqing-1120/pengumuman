@@ -412,6 +412,7 @@ document.getElementById('formCekStatus')?.addEventListener('submit', async e => 
 
 /* ── Builder: Kartu LOLOS (Amber Glass) ── */
 function buildLolosCard(p) {
+  const waGroupUrl = 'https://chat.whatsapp.com/GUUgo7cy3SB9vF96eKaIFL?s=cl&p=a&mlu=4';
   return `
     <div class="amber-glass hasil-card hasil-lolos spatial-hover">
       <span class="status-emoji">🎉</span>
@@ -431,10 +432,13 @@ function buildLolosCard(p) {
             </div>`
           : ''
       }
-      <p class="pesan-akhir">
-        Selamat atas keberhasilan Anda bergabung dalam kepanitiaan PEMILOS 2026.<br/>
-        Persiapkan diri Anda untuk tahapan dan amanah selanjutnya dengan integritas tinggi! 🌟
-      </p>
+      <div class="wa-group-container">
+        <a href="${waGroupUrl}" target="_blank" rel="noopener noreferrer" class="btn-wa-group">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Gabung Grup WhatsApp</span>
+        </a>
+        <p class="wa-group-subtext">Silakan segera bergabung ke grup koordinasi resmi panitia PEMILOS 2026</p>
+      </div>
     </div>`;
 }
 
@@ -459,10 +463,6 @@ function buildTidakCard(p) {
             </div>`
           : ''
       }
-      <p class="pesan-akhir">
-        Terima kasih atas antusiasme dan kontribusi Anda dalam seleksi panitia PEMILOS 2026.<br/>
-        Tetap semangat, jangan berkecil hati, dan terus berkarya di kesempatan berikutnya! 💪
-      </p>
     </div>`;
 }
 
@@ -480,9 +480,8 @@ function buildNotFoundCard(nama, nisn) {
       <p style="font-size:1.05rem;color:var(--text-main);margin-bottom:0.75rem;">
         Nama <strong>${escapeHtml(nama) || '—'}</strong> dengan NISN <strong>${escapeHtml(nisn) || '—'}</strong> tidak ditemukan dalam database sistem.
       </p>
-      <p class="pesan-akhir">
-        Pastikan penulisan nama lengkap dan 10 digit NISN sudah sesuai dengan data yang didaftarkan.<br/>
-        Jika masih terjadi kendala, silakan hubungi panitia melalui email MPK.
+      <p style="font-size:0.88rem;color:var(--text-muted);">
+        Pastikan penulisan nama lengkap dan 10 digit NISN sudah sesuai dengan data formulir pendaftaran.
       </p>
     </div>`;
 }
@@ -494,7 +493,7 @@ function buildValidasiCard() {
       <span class="status-emoji">⚠️</span>
       <h2 class="status-head" style="color:var(--amber-800);">MOHON LENGKAPI FORMULIR</h2>
       <hr class="hasil-divider" />
-      <p class="pesan-akhir">
+      <p style="font-size:0.92rem;color:var(--text-muted);">
         Silakan masukkan Nama Lengkap dan NISN terlebih dahulu sebelum menekan tombol periksa hasil.
       </p>
     </div>`;
