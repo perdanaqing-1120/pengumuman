@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="id" class="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portal Pengumuman Seleksi Panitia Pemilos — SMAN 1 Soppeng</title>
-  
+
   <!-- Typography & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Geist:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  
+
   <!-- Amber Glass Stylesheet -->
   <link rel="stylesheet" href="pengumuman.css" />
 </head>
+
 <body>
 
   <!-- ═══════════════════════════════════════════
@@ -27,19 +31,13 @@
     <div class="logo-item" title="MPK SMAN 1 Soppeng">
       <img src="assets/logo/LOGO MPK (1) (1).webp" alt="MPK SMAN 1 Soppeng" />
     </div>
-    <div class="logo-item" title="OSIS SMAN 1 Soppeng">
-      <img src="assets/logo/ChatGPT Image Aug 21, 2026, 08_58_48 PM.png" alt="OSIS SMAN 1 Soppeng" />
-    </div>
-    <div class="logo-item" title="Panitia PEMILOS">
-      <img src="assets/logo/ChatGPT Image Aug 21, 2026, 10_34_45 PM.webp" alt="Panitia Pemilos" />
-    </div>
   </header>
 
   <!-- ══════════════════════════════════════════
        PAGE 1 — SISWA (FORM CEK STATUS)
   ═══════════════════════════════════════════ -->
   <main id="page-siswa" class="page active main-container">
-    
+
     <div class="single-card-wrap">
 
       <!-- Bento Card: Form Cek Status -->
@@ -95,7 +93,7 @@
   ═══════════════════════════════════════════ -->
   <div id="page-hasil" class="page">
     <div class="hasil-page-layout">
-      
+
       <div class="hasil-card-wrapper" id="hasilContainer">
         <!-- Dynamically rendered via JS -->
       </div>
@@ -112,14 +110,15 @@
        PAGE 3 — ADMIN DASHBOARD & LOGIN
   ═══════════════════════════════════════════ -->
   <div id="page-admin" class="page">
-    
+
     <!-- Login Panel -->
     <div id="panel-login" class="admin-center-wrap">
       <div class="amber-glass login-card-bento spatial-hover">
         <div class="login-shield-icon">
           <span class="material-icons-round">security</span>
         </div>
-        <h2 style="font-size:1.5rem;font-weight:800;color:var(--text-main);margin-bottom:0.25rem;">Panel Panitia MPK</h2>
+        <h2 style="font-size:1.5rem;font-weight:800;color:var(--text-main);margin-bottom:0.25rem;">Panel Panitia MPK
+        </h2>
         <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1.5rem;">
           Masukkan kata sandi panitia untuk mengelola data peserta.
         </p>
@@ -156,7 +155,7 @@
 
     <!-- Admin Dashboard -->
     <div id="panel-dashboard" class="main-container" style="display:none;">
-      
+
       <!-- Top Bar Stats -->
       <div class="amber-glass admin-header-bento">
         <div style="display:flex;align-items:center;gap:0.75rem;">
@@ -191,7 +190,7 @@
 
       <!-- Admin Bento Layout -->
       <div class="bento-grid">
-        
+
         <!-- Bento Card: Input Peserta Manual (Col 6) -->
         <div class="col-6 amber-glass form-bento-card spatial-hover">
           <div class="card-header-flex">
@@ -226,7 +225,8 @@
 
             <div class="form-group">
               <label for="addKeterangan">Keterangan / Catatan <em>(Opsional)</em></label>
-              <input type="text" id="addKeterangan" placeholder="Contoh: Wawancara Tgl 25 Pkl 09.00" class="input-plain" />
+              <input type="text" id="addKeterangan" placeholder="Contoh: Wawancara Tgl 25 Pkl 09.00"
+                class="input-plain" />
             </div>
 
             <div id="tambahError" class="alert-bento alert-danger" style="display:none;"></div>
@@ -251,14 +251,16 @@
           </div>
 
           <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.5;">
-            Format kolom: <code>Nama Lengkap,NISN,Status,Keterangan</code><br/>
+            Format kolom: <code>Nama Lengkap,NISN,Status,Keterangan</code><br />
             Nilai status: <code>lolos</code> atau <code>tidak</code> (baris pertama dianggap judul/header).
           </p>
 
           <div class="file-upload-bento" id="fileUploadArea">
-            <span class="material-icons-round" style="font-size:3rem;color:var(--primary);display:block;margin-bottom:0.5rem;">cloud_upload</span>
+            <span class="material-icons-round"
+              style="font-size:3rem;color:var(--primary);display:block;margin-bottom:0.5rem;">cloud_upload</span>
             <p style="font-weight:700;color:var(--text-main);">Klik atau Seret File CSV ke Sini</p>
-            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.25rem;">Hanya menerima file berekstensi .csv (UTF-8)</p>
+            <p style="font-size:0.78rem;color:var(--text-muted);margin-top:0.25rem;">Hanya menerima file berekstensi
+              .csv (UTF-8)</p>
             <input type="file" id="csvInput" accept=".csv" />
           </div>
 
@@ -267,7 +269,8 @@
 
         <!-- Bento Card: Tabel Data Peserta (Col 12) -->
         <div class="col-12 amber-glass form-bento-card">
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+          <div
+            style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
             <div style="display:flex;align-items:center;gap:0.65rem;">
               <div class="card-header-icon" style="width:2.4rem;height:2.4rem;font-size:1.1rem;">
                 <span class="material-icons-round">format_list_bulleted</span>
@@ -281,9 +284,11 @@
             <div style="display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;">
               <div class="input-wrap" style="width:220px;">
                 <span class="material-icons-round input-icon-left" style="font-size:0.9rem;">search</span>
-                <input type="text" id="searchPeserta" placeholder="Cari nama / NISN..." style="padding:0.55rem 0.75rem 0.55rem 2.2rem;font-size:0.85rem;" />
+                <input type="text" id="searchPeserta" placeholder="Cari nama / NISN..."
+                  style="padding:0.55rem 0.75rem 0.55rem 2.2rem;font-size:0.85rem;" />
               </div>
-              <select id="filterStatus" class="input-plain" style="padding:0.55rem 0.85rem;font-size:0.85rem;width:auto;">
+              <select id="filterStatus" class="input-plain"
+                style="padding:0.55rem 0.85rem;font-size:0.85rem;width:auto;">
                 <option value="semua">Semua Status</option>
                 <option value="lolos">✅ Lolos</option>
                 <option value="tidak">❌ Tidak Lolos</option>
@@ -330,14 +335,15 @@
   ═══════════════════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-inner amber-glass">
-      
+
       <div class="footer-socials">
         <a class="social-link" href="https://instagram.com/mpk_smansasoppeng" target="_blank" rel="noopener">
           <i class="fa-brands fa-instagram social-icon"></i>
           <span>mpk_smansasoppeng</span>
         </a>
         <span class="social-divider">|</span>
-        <a class="social-link" href="https://www.tiktok.com/@mpk_smansaa?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">
+        <a class="social-link" href="https://www.tiktok.com/@mpk_smansaa?is_from_webapp=1&sender_device=pc"
+          target="_blank" rel="noopener">
           <i class="fa-brands fa-tiktok social-icon"></i>
           <span>mpk_smansaa</span>
         </a>
@@ -369,4 +375,5 @@
   <!-- Script Logic -->
   <script src="pengumuman.js"></script>
 </body>
+
 </html>
