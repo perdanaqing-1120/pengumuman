@@ -440,7 +440,7 @@ function buildLolosCard(p) {
           <i class="fa-brands fa-whatsapp"></i>
           <span>Gabung Grup WhatsApp</span>
         </a>
-        <p class="wa-group-subtext">Silahkan segera bergabung ke grup koordinasi resmi Calon Pengurus MPK 2026-2027</p>
+        <p class="wa-group-subtext">Silahkan segera bergabung ke grup koordinasi resmi Calon Pengurus MPK 26-27</p>
       </div>
     </div>`;
 }
