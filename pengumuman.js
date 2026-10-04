@@ -420,7 +420,7 @@ function buildLolosCard(p) {
         <span class="material-icons-round" style="font-size:1rem;">verified</span>
         <span>HASIL RESMI SELEKSI</span>
       </div>
-      <h2 class="status-head">SELAMAT ANDA DINYATAKAN<br/>LOLOS SELEKSI PENGURUS MPK TAHUN 2026</h2>
+      <h2 class="status-head">SELAMAT ANDA DINYATAKAN<br/>LOLOS SELEKSI PENGURUS MPK TAHUN 2026-2027</h2>
       <hr class="hasil-divider" />
       <h3 class="nama-peserta-prominent">${escapeHtml(p.nama)}</h3>
       <div class="nisn-badge-prominent">NISN: <strong>${escapeHtml(p.nisn)}</strong></div>
