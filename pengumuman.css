@@ -101,7 +101,7 @@ body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-main);
   background-color: #fff7ed;
-  background-image: url('assets/img/background.jpeg');
+  background-image: url('assets/img/background.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
