@@ -161,7 +161,16 @@ function escapeHtml(s) {
    THEME SWITCHER (Light / Dark Mode)
    ────────────────────────────────────────────────── */
 function initTheme() {
-  const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
+  // Default ke dark mode
+  let savedTheme = localStorage.getItem(THEME_KEY);
+
+  // Jika tombol toggle sedang disembunyikan sementara, pastikan mode gelap diterapkan
+  const toggleBtn = document.getElementById('btnThemeToggleFloat');
+  const isHidden = toggleBtn && (toggleBtn.style.display === 'none' || window.getComputedStyle(toggleBtn).display === 'none');
+
+  if (!savedTheme || isHidden) {
+    savedTheme = 'dark';
+  }
   applyTheme(savedTheme);
 }
 
