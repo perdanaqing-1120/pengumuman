@@ -412,7 +412,7 @@ document.getElementById('formCekStatus')?.addEventListener('submit', async e => 
 
 /* ── Builder: Kartu LOLOS (Amber Glass) ── */
 function buildLolosCard(p) {
-  const waGroupUrl = 'https://chat.whatsapp.com/GUUgo7cy3SB9vF96eKaIFL?s=cl&p=a&mlu=4';
+  const waGroupUrl = 'https://chat.whatsapp.com/FryAmnBKdGlK2vCxVxoxxX?mode=gi_t';
   return `
     <div class="amber-glass hasil-card hasil-lolos spatial-hover">
       <span class="status-emoji">🎉</span>
@@ -420,7 +420,7 @@ function buildLolosCard(p) {
         <span class="material-icons-round" style="font-size:1rem;">verified</span>
         <span>HASIL RESMI SELEKSI</span>
       </div>
-      <h2 class="status-head">SELAMAT! ANDA DINYATAKAN<br/>LOLOS SELEKSI PANITIA</h2>
+      <h2 class="status-head">SELAMAT ANDA DINYATAKAN<br/>LOLOS SELEKSI PENGURUS MPK TAHUN 2026</h2>
       <hr class="hasil-divider" />
       <h3 class="nama-peserta-prominent">${escapeHtml(p.nama)}</h3>
       <div class="nisn-badge-prominent">NISN: <strong>${escapeHtml(p.nisn)}</strong></div>
@@ -432,7 +432,7 @@ function buildLolosCard(p) {
       : ''
     }
       <p class="pesan-akhir">
-        Selamat kepada yang dinyatakan diterima sebagai Panitia PEMILOS 2026<br/>
+        Selamat kepada yang dinyatakan diterima sebagai Pengurus MPK 2026<br/>
         Semoga dapat menjalankan tugas dan tanggung jawab dengan baik serta memberikan kontribusi terbaik. 
       </p>
       <div class="wa-group-container">
@@ -440,7 +440,7 @@ function buildLolosCard(p) {
           <i class="fa-brands fa-whatsapp"></i>
           <span>Gabung Grup WhatsApp</span>
         </a>
-        <p class="wa-group-subtext">Silakan segera bergabung ke grup koordinasi resmi panitia PEMILOS 2026</p>
+        <p class="wa-group-subtext">Silakan segera bergabung ke grup koordinasi resmi Pengurus MPK 2026</p>
       </div>
     </div>`;
 }
