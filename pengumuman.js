@@ -6,7 +6,7 @@
 'use strict';
 
 /* ── Kredensial Admin & Kunci Tema ── */
-const ADMIN_PASSWORD = 'MPKSMANSA';
+const ADMIN_PASSWORD = 'AEVAKETUAMPK';
 const THEME_KEY = 'mansa_portal_theme';
 
 /* ── Firebase Configuration (Termasuk Database URL Resmi) ── */
@@ -30,7 +30,7 @@ let isConnectedToFirebase = false;
 // Bersihkan cache lokal lama
 try {
   localStorage.removeItem('pengumuman_peserta_v1');
-} catch (e) {}
+} catch (e) { }
 
 /* ──────────────────────────────────────────────────
    FIREBASE INITIALIZATION & REAL-TIME LISTENER
@@ -42,7 +42,7 @@ function initFirebase() {
         firebase.initializeApp(firebaseConfig);
         try {
           firebase.analytics();
-        } catch (e) {}
+        } catch (e) { }
       }
 
       const rdb = firebase.database();
@@ -168,7 +168,7 @@ function initTheme() {
 function applyTheme(theme) {
   const htmlEl = document.documentElement;
   const iconFloat = document.getElementById('themeIconFloat');
-  
+
   if (theme === 'dark') {
     htmlEl.classList.add('dark');
     htmlEl.classList.remove('light');
@@ -236,11 +236,11 @@ function showModal({ icon = 'help', title, body, confirmText = 'Lanjutkan', conf
 /* ──────────────────────────────────────────────────
    PAGE NAVIGATION & URL ROUTING (/admin, #admin)
    ────────────────────────────────────────────────── */
-const pageSiswa  = document.getElementById('page-siswa');
-const pageHasil  = document.getElementById('page-hasil');
-const pageAdmin  = document.getElementById('page-admin');
+const pageSiswa = document.getElementById('page-siswa');
+const pageHasil = document.getElementById('page-hasil');
+const pageAdmin = document.getElementById('page-admin');
 const panelLogin = document.getElementById('panel-login');
-const panelDash  = document.getElementById('panel-dashboard');
+const panelDash = document.getElementById('panel-dashboard');
 
 function showPage(id) {
   [pageSiswa, pageHasil, pageAdmin].forEach(p => {
@@ -256,12 +256,12 @@ function handleUrlRoute() {
   const path = (window.location.pathname || '').toLowerCase();
 
   if (
-    hash === '#admin' || 
-    hash === '#/admin' || 
-    path === '/admin' || 
-    path === '/admin/' || 
-    path.endsWith('/admin') || 
-    path.endsWith('/admin/') || 
+    hash === '#admin' ||
+    hash === '#/admin' ||
+    path === '/admin' ||
+    path === '/admin/' ||
+    path.endsWith('/admin') ||
+    path.endsWith('/admin/') ||
     path.endsWith('/admin.html')
   ) {
     showPage('page-admin');
@@ -373,9 +373,9 @@ document.getElementById('formCekStatus')?.addEventListener('submit', async e => 
   e.preventDefault();
   const namaMentah = document.getElementById('inputNama')?.value || '';
   const nisnMentah = (document.getElementById('inputNISN')?.value || '').trim();
-  const nama       = normalize(namaMentah);
-  const nisn       = nisnMentah;
-  const container  = document.getElementById('hasilContainer');
+  const nama = normalize(namaMentah);
+  const nisn = nisnMentah;
+  const container = document.getElementById('hasilContainer');
 
   if (!nama || !nisn) {
     container.innerHTML = buildValidasiCard();
@@ -424,14 +424,13 @@ function buildLolosCard(p) {
       <hr class="hasil-divider" />
       <h3 class="nama-peserta-prominent">${escapeHtml(p.nama)}</h3>
       <div class="nisn-badge-prominent">NISN: <strong>${escapeHtml(p.nisn)}</strong></div>
-      ${
-        p.keterangan
-          ? `<div class="ket-box-prominent">
+      ${p.keterangan
+      ? `<div class="ket-box-prominent">
               <span class="material-icons-round" style="color:var(--primary);font-size:1.15rem;">info</span>
               <span><strong>Catatan:</strong> ${escapeHtml(p.keterangan)}</span>
             </div>`
-          : ''
-      }
+      : ''
+    }
       <p class="pesan-akhir">
         Selamat kepada yang dinyatakan diterima sebagai Panitia PEMILOS 2026<br/>
         Semoga dapat menjalankan tugas dan tanggung jawab dengan baik serta memberikan kontribusi terbaik. 
@@ -459,14 +458,13 @@ function buildTidakCard(p) {
       <hr class="hasil-divider" />
       <h3 class="nama-peserta-prominent">${escapeHtml(p.nama)}</h3>
       <div class="nisn-badge-prominent">NISN: <strong>${escapeHtml(p.nisn)}</strong></div>
-      ${
-        p.keterangan
-          ? `<div class="ket-box-prominent">
+      ${p.keterangan
+      ? `<div class="ket-box-prominent">
               <span class="material-icons-round" style="color:var(--color-danger);font-size:1.15rem;">info</span>
               <span><strong>Catatan:</strong> ${escapeHtml(p.keterangan)}</span>
             </div>`
-          : ''
-      }
+      : ''
+    }
       <p class="pesan-akhir">
         Jangan menyerah! Setiap kegagalan adalah pelajaran berharga.<br/>
         Tetap semangat dan terus berusaha.
@@ -512,11 +510,11 @@ function buildValidasiCard() {
    ────────────────────────────────────────────────── */
 document.getElementById('formTambah')?.addEventListener('submit', async e => {
   e.preventDefault();
-  const nama       = (document.getElementById('addNama')?.value || '').trim();
-  const nisn       = (document.getElementById('addNISN')?.value || '').trim();
-  const status     = document.getElementById('addStatus')?.value || 'lolos';
+  const nama = (document.getElementById('addNama')?.value || '').trim();
+  const nisn = (document.getElementById('addNISN')?.value || '').trim();
+  const status = document.getElementById('addStatus')?.value || 'lolos';
   const keterangan = (document.getElementById('addKeterangan')?.value || '').trim();
-  const errEl      = document.getElementById('tambahError');
+  const errEl = document.getElementById('tambahError');
 
   if (!nama || !nisn) {
     if (errEl) {
@@ -616,7 +614,7 @@ function renderStats() {
 }
 
 function renderTable(filterStr = '', filterStatus = 'semua') {
-  const tbody   = document.getElementById('tbodyPeserta');
+  const tbody = document.getElementById('tbodyPeserta');
   if (!tbody) return;
   const keyword = normalize(filterStr);
 
@@ -702,7 +700,7 @@ async function parseCSV(text) {
     const nama = (cols[0] || '').trim();
     const nisn = (cols[1] || '').trim();
     const stat = normalize(cols[2] || '');
-    const ket  = (cols[3] || '').trim();
+    const ket = (cols[3] || '').trim();
 
     if (!nama || !nisn) {
       errors.push(`Baris ${i + 1}: Nama atau NISN kosong`);
