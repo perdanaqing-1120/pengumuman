@@ -161,7 +161,16 @@ function escapeHtml(s) {
    THEME SWITCHER (Light / Dark Mode)
    ────────────────────────────────────────────────── */
 function initTheme() {
-  const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
+  // Default ke dark mode
+  let savedTheme = localStorage.getItem(THEME_KEY);
+
+  // Jika tombol toggle sedang disembunyikan sementara, pastikan mode gelap diterapkan
+  const toggleBtn = document.getElementById('btnThemeToggleFloat');
+  const isHidden = toggleBtn && (toggleBtn.style.display === 'none' || window.getComputedStyle(toggleBtn).display === 'none');
+
+  if (!savedTheme || isHidden) {
+    savedTheme = 'dark';
+  }
   applyTheme(savedTheme);
 }
 
@@ -410,11 +419,11 @@ document.getElementById('formCekStatus')?.addEventListener('submit', async e => 
   showPage('page-hasil');
 });
 
-/* ── Builder: Kartu LOLOS (Amber Glass) ── */
+/* ── Builder: Kartu LOLOS (Glass Card) ── */
 function buildLolosCard(p) {
   const waGroupUrl = 'https://chat.whatsapp.com/FryAmnBKdGlK2vCxVxoxxX?mode=gi_t';
   return `
-    <div class="amber-glass hasil-card hasil-lolos spatial-hover">
+    <div class="glass-card hasil-card hasil-lolos spatial-hover">
       <span class="status-emoji">🎉</span>
       <div class="ribbon-badge">
         <span class="material-icons-round" style="font-size:1rem;">verified</span>
@@ -448,7 +457,7 @@ function buildLolosCard(p) {
 /* ── Builder: Kartu TIDAK LOLOS ── */
 function buildTidakCard(p) {
   return `
-    <div class="amber-glass hasil-card hasil-tidak spatial-hover">
+    <div class="glass-card hasil-card hasil-tidak spatial-hover">
       <span class="status-emoji">🤝</span>
       <div class="ribbon-badge">
         <span class="material-icons-round" style="font-size:1rem;">info</span>
@@ -475,13 +484,13 @@ function buildTidakCard(p) {
 /* ── Builder: Data Tidak Ditemukan ── */
 function buildNotFoundCard(nama, nisn) {
   return `
-    <div class="amber-glass hasil-card spatial-hover">
+    <div class="glass-card hasil-card hasil-notfound spatial-hover">
       <span class="status-emoji">🔍</span>
-      <div class="ribbon-badge" style="background:var(--amber-700);color:#fff;">
+      <div class="ribbon-badge ribbon-notfound">
         <span class="material-icons-round" style="font-size:1rem;">search_off</span>
         <span>DATA TIDAK DITEMUKAN</span>
       </div>
-      <h2 class="status-head" style="color:var(--amber-800);">DATA BELUM TERDAFTAR</h2>
+      <h2 class="status-head status-head-notfound">DATA BELUM TERDAFTAR</h2>
       <hr class="hasil-divider" />
       <p style="font-size:1.05rem;color:var(--text-main);margin-bottom:0.75rem;">
         Nama <strong>${escapeHtml(nama) || '—'}</strong> dengan NISN <strong>${escapeHtml(nisn) || '—'}</strong> tidak ditemukan dalam database sistem.
@@ -495,9 +504,13 @@ function buildNotFoundCard(nama, nisn) {
 /* ── Builder: Validasi Kosong ── */
 function buildValidasiCard() {
   return `
-    <div class="amber-glass hasil-card spatial-hover">
+    <div class="glass-card hasil-card hasil-warning spatial-hover">
       <span class="status-emoji">⚠️</span>
-      <h2 class="status-head" style="color:var(--amber-800);">MOHON LENGKAPI FORMULIR</h2>
+      <div class="ribbon-badge ribbon-warning">
+        <span class="material-icons-round" style="font-size:1rem;">warning</span>
+        <span>PERINGATAN</span>
+      </div>
+      <h2 class="status-head status-head-warning">MOHON LENGKAPI FORMULIR</h2>
       <hr class="hasil-divider" />
       <p style="font-size:0.92rem;color:var(--text-muted);">
         Silakan masukkan Nama Lengkap dan NISN terlebih dahulu sebelum menekan tombol periksa hasil.
@@ -818,6 +831,80 @@ document.getElementById('btnExportCSV')?.addEventListener('click', () => {
   }
 });
 
+/* ──────────────────────────────────────────────────
+   LIQUID GLASS MOUSE TRACKING & INTERACTIVE LIGHT
+   ────────────────────────────────────────────────── */
+function initLiquidInteractions() {
+  let rafId = null;
+  document.addEventListener('pointermove', e => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      const cards = document.querySelectorAll('.amber-glass, .liquid-glass');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (
+          e.clientX >= rect.left - 100 &&
+          e.clientX <= rect.right + 100 &&
+          e.clientY >= rect.top - 100 &&
+          e.clientY <= rect.bottom + 100
+        ) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        }
+      });
+      rafId = null;
+    });
+  }, { passive: true });
+}
+
+/* ──────────────────────────────────────────────────
+   SCROLL-DRIVEN LIQUID LIGHT REFRACTION & BENDING
+   ────────────────────────────────────────────────── */
+function initScrollRefraction() {
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+  let velocity = 0;
+
+  function updateScrollMetrics() {
+    const scrollY = window.scrollY;
+    velocity = scrollY - lastScrollY;
+    lastScrollY = scrollY;
+
+    const docHeight = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+    const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+    
+    // Wave curvature & angle for light bending through glass over background photo
+    const bendX = Math.sin(scrollY * 0.007) * 36;
+    const bendY = Math.cos(scrollY * 0.005) * 24;
+    const bendAngle = (scrollY * 0.16) % 360;
+    const clampedVelocity = Math.max(Math.min(velocity, 50), -50);
+
+    const rootStyle = document.documentElement.style;
+    rootStyle.setProperty('--scroll-y', `${scrollY}px`);
+    rootStyle.setProperty('--scroll-prog', progress.toFixed(4));
+    rootStyle.setProperty('--scroll-bend-x', `${bendX.toFixed(2)}px`);
+    rootStyle.setProperty('--scroll-bend-y', `${bendY.toFixed(2)}px`);
+    rootStyle.setProperty('--scroll-bend-deg', `${(bendX * 0.55).toFixed(2)}deg`);
+    rootStyle.setProperty('--scroll-angle', `${bendAngle.toFixed(2)}deg`);
+    rootStyle.setProperty('--scroll-velocity', `${clampedVelocity.toFixed(1)}px`);
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateScrollMetrics);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateScrollMetrics();
+}
+
 /* ── Global Initialization ── */
 initTheme();
 initFirebase();
+initLiquidInteractions();
+initScrollRefraction();
