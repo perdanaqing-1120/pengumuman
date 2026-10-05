@@ -6,7 +6,7 @@
 'use strict';
 
 /* ── Kredensial Admin & Kunci Tema ── */
-const ADMIN_PASSWORD = 'AEVAKETUAMPK';
+const ADMIN_PASSWORD = 'ELYBANTALSEKRET';
 const THEME_KEY = 'mansa_portal_theme';
 
 /* ── Firebase Configuration (Termasuk Database URL Resmi) ── */
