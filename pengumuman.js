@@ -442,7 +442,7 @@ function buildLolosCard(p) {
     }
       <p class="pesan-akhir">
         Selamat kepada yang dinyatakan diterima sebagai Pengurus MPK Periode 2026-2027<br/>
-        Semoga dapat menjalankan tugas dan tanggung jawab dengan baik serta memberikan kontribusi terbaik. 
+        Semoga dapat menjalankan tugas dan diberikan keikhlasan serta kesabaran dalam melaksanakan setiap program kerja. 
       </p>
       <div class="wa-group-container">
         <a href="${waGroupUrl}" target="_blank" rel="noopener noreferrer" class="btn-wa-group">
